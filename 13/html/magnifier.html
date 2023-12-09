@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            position: relative;
+        }
+        #small{
+            width: 400px;
+            height: 400px;
+            background: cornflowerblue;
+            position: relative;
+        }
+        #small img{
+            width: 400px;
+            height: 400px;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #big{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 400px;
+            display: none;
+        }
+        #bokuto{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="small">
+            <img src="../images/bokuto.jpg" alt="bokuto">
+            <div id="drag"></div>
+        </div>
+        <div id="big">
+            <img src="../images/bokuto-big.jpg" alt="big" id="bokuto">
+        </div>
+    </div>
+    <script src="../js/magnifier.js"></script>
+</body>
+</html>
