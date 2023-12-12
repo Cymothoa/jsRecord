@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function deepClone(data) {
+            var temp = {};
+            if(typeof data == 'object') {
+                temp = Array.isArray(data) ? [] : {};
+                for(key in data) {
+                    if(typeof data[key] == 'object') {
+                        temp[key] = deepClone(data[key]);
+                    } else {
+                        temp[key] = data[key];
+                    }
+                }
+            } else {
+                temp = data;
+            }
+            
+            return temp;
+        }
+        var arr = ['list',[100,1]];
+        var newArr = deepClone(arr)
+        var news;
+        news = newArr;
+        news[1][1] = ['llll'];
+        console.log(news,'news');
+        console.log(arr,'arr')
+    </script>
+</body>
+</html>

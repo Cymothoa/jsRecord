@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var news = {
+            name: 'Endymion',
+            age: 100,
+            main: {
+                address:'china',
+                sex: "female"
+            }
+        }
+
+        function deepClone(obj) {
+            // 定义一个空对象 用来接收深克隆后的结果
+            var objs = {};
+            // for循环传入的对象 循环的是对象下面的每一项
+            for(key in obj) {
+                // 判断是否是引用数据类型 注意小写
+                if(typeof(obj[key]) == 'object') {
+                    // 再次调用深克隆方法
+                    objs[key] = deepClone(obj[key]);
+                }else {
+                    // 直接复制
+                    objs[key] = obj[key];
+                }
+            }
+            //抛出深克隆后的对象
+            return objs;
+        }
+       var newObjs = deepClone(news);
+       newObjs.main.address = "111";
+       console.log(news,'2')
+       console.log(newObjs,'1')
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    height: 220px;
+    overflow-x: scroll;
+    /* overflow-y: scroll; */
+}
+.main {
+    flex: 1;
+    display: flex;
+}
+#box {
+    width: 200px;
+    height: 200px;
+    background: #f00;
+    margin-left: 20px;
+}
